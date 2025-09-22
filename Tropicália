@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tropicália Acessível Avançado</title>
+<style>
+    /* 🌈 Estilo Geral */
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #FFD700, #FF6347, #40E0D0);
+        color: #000;
+        margin: 0;
+        transition: background 0.5s, color 0.5s, font-size 0.3s;
+    }
+
+    /* 🌺 Animação de fundo */
+    @keyframes gradientBG {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+    body {
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+    }
+
+    header {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    h1 { font-size: 2.8rem; margin: 0; animation: pulse 2s infinite; }
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+    }
+
+    nav a:focus, nav a:hover {
+        outline: 3px solid #000;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .accessibility-buttons {
+        margin-top: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        margin: 5px;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    button:hover, button:focus {
+        background-color: #000;
+        color: #fff;
+        outline: 2px solid #fff;
+    }
+
+    main { padding: 20px; }
+
+    h2 { font-size: 2rem; margin-bottom: 15px; }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .image-gallery figure {
+        margin: 0;
+        text-align: center;
+        max-width: 220px;
+    }
+
+    .image-gallery img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .image-gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #fff;
+    }
+
+    figcaption {
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+
+    video {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    footer {
+        background-color: rgba(0,0,0,0.8);
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    footer a {
+        color: #FFD700;
+        text-decoration: none;
+    }
+
+    footer a:hover, footer a:focus {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+<header role="banner">
+    <h1>Tropicália Acessível Avançado</h1>
+    <nav aria-label="Menu principal">
+        <a href="#galeria">Galeria</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a href="#video">Vídeo</a>
+    </nav>
+    <div class="accessibility-buttons">
+        <button onclick="increaseFont()">A+</button>
+        <button onclick="decreaseFont()">A-</button>
+        <button onclick="toggleContrast()">Contraste</button>
+    </div>
+</header>
+
+<main role="main">
+    <section id="galeria" aria-label="Galeria de imagens Tropicália">
+        <h2>Galeria Tropicália</h2>
+        <div class="image-gallery">
+            <figure>
+                <img src="https://via.placeholder.com/200x150?text=Tropic%C3%A1lia+1" alt="Arte Tropicália 1, cores vibrantes, músicos" aria-describedby="desc1">
+                <figcaption id="desc1">Fonte: placeholder.com</figcaption>
+                <button onclick="playAudio('audio1')">🔊 Ouvir descrição</button>
+                <audio id="audio1" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+            </figure>
+
+            <figure>
+                <img src="https://via.placeholder.com/200x150?text=Tropic%C3%A1lia+2" alt="Arte Tropicália 2, instrumentos e dança" aria-describedby="desc2">
+                <figcaption id="desc2">Fonte: placeholder.com</figcaption>
+                <button onclick="playAudio('audio2')">🔊 Ouvir descrição</button>
+                <audio id="audio2" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio>
+            </figure>
+
+            <figure>
+                <img src="https://via.placeholder.com/200x150?text=Tropic%C3%A1lia+3" alt="Arte Tropicália 3, palco e público" aria-describedby="desc3">
+                <figcaption id="desc3">Fonte: placeholder.com</figcaption>
+                <button onclick="playAudio('audio3')">🔊 Ouvir descrição</button>
+                <audio id="audio3" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"></audio>
+            </figure>
+        </div>
+    </section>
+
+    <section id="sobre" aria-label="Sobre o movimento Tropicália">
+        <h2>Sobre Tropicália</h2>
+        <p>Tropicália foi um movimento cultural brasileiro que mesclou música, artes visuais e teatro, trazendo inovação e diversidade estética. Liderado por artistas como Caetano Veloso, Gilberto Gil e Gal Costa, influenciou gerações de artistas e permanece relevante até hoje.</p>
+    </section>
+
+    <section id="video" aria-label="Vídeo com legendas e audiodescrição">
+        <h2>Vídeo Tropicália</h2>
+        <video controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <track kind="captions" src="https://www.w3schools.com/html/mov_bbb.vtt" srclang="pt" label="Português" default>
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </section>
+
+    <section id="contato" aria-label="Contato">
+        <h2>Contato</h2>
+        <p>Email: <a href="mailto:contato@tropicalia.com">contato@tropicalia.com</a></p>
+        <p>Telefone: <a href="tel:+5511999999999">+55 11 99999-9999</a></p>
+    </section>
+</main>
+
+<footer role="contentinfo">
+    <p>© 2025 Tropicália Acessível | <a href="#">Política de Privacidade</a></p>
+</footer>
+
+<script>
+    function increaseFont() {
+        document.body.style.fontSize = (parseInt(getComputedStyle(document.body).fontSize) + 2) + 'px';
+    }
+
+    function decreaseFont() {
+        document.body.style.fontSize = (parseInt(getComputedStyle(document.body).fontSize) - 2) + 'px';
+    }
+
+    function toggleContrast() {
+        if(document.body.style.background.includes('linear-gradient')) {
+            document.body.style.background = '#000';
+            document.body.style.color = '#fff';
+        } else {
+            document.body.style.background = 'linear-gradient(120deg, #FFD700, #FF6347, #40E0D0)';
+            document.body.style.color = '#000';
+        }
+    }
+
+    function playAudio(id) {
+        const audio = document.getElementById(id);
+        audio.play();
+    }
+</script>
+</body>
+</html>
